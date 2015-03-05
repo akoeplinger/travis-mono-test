@@ -7,3 +7,6 @@ mono:
   - 3.10.0
   - 3.8.0
   - 2.10.8
+script:
+  - xbuild /p:Configuration=Release travis-mono-test.sln
+  - mono travis-mono-test/bin/Release/travis-mono-test.exe
