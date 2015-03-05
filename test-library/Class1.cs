@@ -10,7 +10,7 @@ namespace test_library
     {
         public static void DoIt()
         {
-            Console.WriteLine("Hello " + DateTime.Now);
+            Console.WriteLine("Hello " + DateTime.UtcNow);
         }
     }
 }
