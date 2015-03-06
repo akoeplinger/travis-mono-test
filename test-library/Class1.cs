@@ -10,7 +10,14 @@ namespace test_library
     {
         public static void DoIt()
         {
-            Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D"));
+            Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D") + " :-)");
+			Type type = Type.GetType("Mono.Runtime");
+if (type != null)
+{
+    MethodInfo displayName = type.GetMethod("GetDisplayName", BindingFlags.NonPublic | BindingFlags.Static);
+    if (displayName != null)
+        Console.WriteLine(displayName.Invoke(null, null));
+}
         }
     }
 }
