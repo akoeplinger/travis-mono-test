@@ -9,7 +9,7 @@ namespace test_library
 {
     public class Class1
     {
-        public static void DoIt()
+        public static void DoIt() 
         {
             Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D") + " :-)");
 			Type type = Type.GetType("Mono.Runtime");
