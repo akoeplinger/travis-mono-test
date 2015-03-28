@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace travis_mono_test
 {
-    class Program
+    class Programasd
     {
         static void Main(string[] args)
         {
