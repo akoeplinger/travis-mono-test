@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace test_library
 {
-    public class Class1
+    public class Class1 
     {
         public static void DoIt()
         {
