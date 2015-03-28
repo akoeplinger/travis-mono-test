@@ -11,6 +11,6 @@ namespace travis_mono_test
         static void Main(string[] args)
         {
             test_library.Class1.DoIt();
-        }
+        }asd
     }
 }
