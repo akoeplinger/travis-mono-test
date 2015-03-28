@@ -8,7 +8,7 @@ namespace travis_mono_test
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)asd
         {
             test_library.Class1.DoIt();
         }
