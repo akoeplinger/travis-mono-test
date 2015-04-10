@@ -12,7 +12,7 @@ namespace test_library
         public static void DoIt() 
         {
             Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D") + " :-)");
-            Console.WriteLine("EnvVar: " + Environment.GetEnvironmentVariable("MyVar", EnvironmentVariableTarget.User));
+            Console.WriteLine("EnvVar: " + Environment.GetEnvironmentVariable("MyVar", EnvironmentVariableTarget.Machine));
 			Type type = Type.GetType("Mono.Runtime");
 if (type != null)
 {
