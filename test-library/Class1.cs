@@ -12,7 +12,8 @@ namespace test_library
         public static void DoIt() 
         {
             Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D") + " :-)");
-            Console.WriteLine("EnvVar: " + Environment.GetEnvironmentVariable("TRAVIS_REPO_SLUG", EnvironmentVariableTarget.Machine));
+            Console.WriteLine("TRAVIS_REPO_SLUG: " + Environment.GetEnvironmentVariable("TRAVIS_REPO_SLUG", EnvironmentVariableTarget.Machine));
+            Console.WriteLine("MyVar: " + Environment.GetEnvironmentVariable("MyVar", EnvironmentVariableTarget.Machine));
             Type type = Type.GetType("Mono.Runtime");
             if (type != null)
             {
