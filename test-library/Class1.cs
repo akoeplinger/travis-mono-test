@@ -9,7 +9,7 @@ namespace test_library
 {
     public class Class1
     {
-        public static void DoIt() 
+        public static void DoIt()  
         {
             Console.WriteLine("Hello World: " + DateTime.UtcNow.ToString("D") + " :-)");
             Console.WriteLine("TRAVIS_REPO_SLUG: " + Environment.GetEnvironmentVariable("TRAVIS_REPO_SLUG"));
