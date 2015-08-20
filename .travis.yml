@@ -5,15 +5,15 @@ os:
   - linux
   - osx
 mono:
-#  - alpha
-#  - beta
-#  - weekly
+  - alpha
+  - beta
+  - weekly
   - latest
-#  - 3.12.0
-#  - 3.10.0
-#  - 3.8.0
-#  - 3.2.8
-#  - 2.10.8
+  - 3.12.0
+  - 3.10.0
+  - 3.8.0
+  - 3.2.8
+  - 2.10.8
 matrix:
   exclude:
     - os: osx
@@ -21,11 +21,5 @@ matrix:
     - os: osx
       mono: 2.10.8
 script:
-#  - xbuild /p:Configuration=Release travis-mono-test.sln
-#  - mono travis-mono-test/bin/Release/travis-mono-test.exe
-  - git clone https://github.com/functionauts/Result
-  - cd Result
-  - export VERBOSITY=diagnostic
-  - ./scripts/restore
-  - ./scripts/build
-  - ./scripts/test
+  - xbuild /p:Configuration=Release travis-mono-test.sln
+  - mono travis-mono-test/bin/Release/travis-mono-test.exe
