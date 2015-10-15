@@ -2,10 +2,8 @@ language: csharp
 solution: travis-mono-test.sln
 sudo: required
 dist: trusty
-os:
-  - linux
-mono:
-  - latest
+os: linux
+mono: latest
 script:
   - xbuild /p:Configuration=Release travis-mono-test.sln
   - mono travis-mono-test/bin/Release/travis-mono-test.exe
