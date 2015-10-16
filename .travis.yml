@@ -1,7 +1,6 @@
 language: csharp
 solution: travis-mono-test.sln
-sudo: required
-dist: trusty
+services: docker
 os: linux
 mono: latest
 script:
