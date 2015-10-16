@@ -1,8 +1,24 @@
 language: csharp
 solution: travis-mono-test.sln
-services: docker
-os: linux
-mono: latest
+sudo: false
+os:
+  - linux
+  - osx
+mono:
+  - alpha
+  - beta
+  - weekly
+  - latest
+  - 4.0.0
+  - 3.12.0
+  - 3.10.0
+  - 3.8.0
+  - 3.2.8
+  - 2.10.8
+matrix:
+  exclude:
+    - os: osx
+      mono: 2.10.8
 script:
   - xbuild /p:Configuration=Release travis-mono-test.sln
   - mono travis-mono-test/bin/Release/travis-mono-test.exe
