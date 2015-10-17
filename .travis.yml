@@ -3,18 +3,8 @@ solution: travis-mono-test.sln
 sudo: false
 os:
   - linux
-  - osx
 mono:
-  - alpha
-  - beta
-  - weekly
   - latest
-  - 4.0.0
-  - 3.12.0
-  - 3.10.0
-  - 3.8.0
-  - 3.2.8
-  - 2.10.8
 matrix:
   exclude:
     - os: osx
