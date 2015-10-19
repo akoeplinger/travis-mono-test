@@ -1,5 +1,6 @@
 language: csharp
 solution: travis-mono-test.sln
+sudo: required
 dist: trusty
 os: linux
 mono: latest
