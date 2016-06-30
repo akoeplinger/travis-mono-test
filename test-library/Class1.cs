@@ -21,6 +21,8 @@ namespace test_library
                 if (displayName != null)
                     Console.WriteLine(displayName.Invoke(null, null));
             }
+            
+            Console.WriteLine(new System.Net.WebClient().DownloadString("https://www.example.com"));
         }
     }
 }
