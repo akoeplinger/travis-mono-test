@@ -22,6 +22,7 @@ matrix:
     - os: osx
       mono: 2.10.8
 script:
+  - eval $(/usr/libexec/path_helper -s)
   - xbuild /p:Configuration=Release travis-mono-test.sln
   - mono travis-mono-test/bin/Release/travis-mono-test.exe
 
