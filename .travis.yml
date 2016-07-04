@@ -9,6 +9,7 @@ mono:
   - beta
   - weekly
   - latest
+  - 4.4.1
   - 4.4.0
   - 4.2.4
   - 4.0.5
@@ -21,6 +22,10 @@ matrix:
   exclude:
     - os: osx
       mono: 2.10.8
+notifications:
+  email:
+    on_success: change
+    on_failure: always
 script:
   - xbuild /p:Configuration=Release travis-mono-test.sln
   - mono travis-mono-test/bin/Release/travis-mono-test.exe
