@@ -2,13 +2,12 @@ language: csharp
 solution: travis-mono-test.sln
 
 matrix:
-  - 
-    sudo: true
-    dist: trusty
-    dotnet: dotnet-dev-1.0.0-preview2-003121
-  - 
-    mono: latest
-    sudo: false
+  include:
+    - sudo: true
+      dist: trusty
+      dotnet: dotnet-dev-1.0.0-preview2-003121
+    - mono: latest
+      sudo: false
 
 cache:
   directories:
