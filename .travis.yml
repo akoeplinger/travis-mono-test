@@ -18,5 +18,5 @@ notifications:
 script:
   - mkdir bla && cd bla
   - dotnet new
-  - dotnet restore
+  - time dotnet restore
   - dotnet run
