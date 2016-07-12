@@ -20,7 +20,10 @@ notifications:
   email:
     on_success: change
     on_failure: always
-    
+
+before_install:
+  - cat ~/build.sh
+
 script:
   - mkdir bla && cd bla
   - dotnet new
