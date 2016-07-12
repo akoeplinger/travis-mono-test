@@ -26,3 +26,4 @@ script:
   - dotnet new
   - time dotnet restore
   - dotnet run
+
