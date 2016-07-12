@@ -4,6 +4,14 @@ solution: travis-mono-test.sln
 mono: none
 dotnet: dotnet-dev-1.0.0-preview2-003121
 
+dist: trusty
+sudo: true
+xcode_image: xcode7.3
+
+os:
+  - linux
+  - osx
+
 cache:
   directories:
     - $HOME/.nuget
