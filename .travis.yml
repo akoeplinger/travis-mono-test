@@ -1,7 +1,7 @@
 language: csharp
 solution: travis-mono-test.sln
 
-mono: none
+mono: latest
 dotnet: 1.0.0-preview2-003121
 sudo: true
 dist: trusty
