@@ -3,7 +3,6 @@ solution: travis-mono-test.sln
 
 mono: latest
 dotnet: none
-sudo: false
 
 cache:
   directories:
