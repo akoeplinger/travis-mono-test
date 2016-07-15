@@ -11,10 +11,6 @@ os:
   - osx
   - linux
 
-cache:
-  directories:
-    - $HOME/.nuget
-
 notifications:
   email:
     on_success: change
