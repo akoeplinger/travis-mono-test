@@ -1,11 +1,11 @@
 language: csharp
 solution: travis-mono-test.sln
 
-mono: 4.2.4
-dotnet: none
+mono: latest
+dotnet: 1.0.0-preview2-003121
 sudo: true
 dist: trusty
-osx_image: xcode7.1
+osx_image: xcode7.3
 
 os:
   - osx
@@ -25,6 +25,9 @@ script:
   - dotnet new
   - time dotnet restore
   - dotnet run
+  - cd ..
+  - xbuild /p:Configuration=Release travis-mono-test.sln
+  - mono travis-mono-test/bin/Release/travis-mono-test.exe
 
 
 
