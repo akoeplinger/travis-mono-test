@@ -1,8 +1,8 @@
 language: csharp
 solution: travis-mono-test.sln
 
-mono: latest
-dotnet: 1.0.0-preview2-003121
+mono: 4.2.4
+dotnet: none
 sudo: true
 dist: trusty
 osx_image: xcode7.3
