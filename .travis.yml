@@ -15,7 +15,7 @@ script:
   - sudo apt-get update -qq
   - export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
   - sudo apt-get install -qq dotnet-dev-1.0.0-preview2-003121
-  - dotnet -info
+  - dotnet --info
   - dotnet new
   - dotnet restore
   - dotnet run
