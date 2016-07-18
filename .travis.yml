@@ -1,7 +1,7 @@
 language: csharp
 solution: travis-mono-test.sln
 
-mono: latest
+mono: none
 dotnet: 1.0.0-preview2-003121
 sudo: true
 dist: trusty
@@ -17,6 +17,8 @@ notifications:
     on_failure: always
 
 script:
+  - sudo apt-get update
+  - sudo apt-get upgrade
   - mkdir bla && cd bla
   - dotnet new
   - time dotnet restore
