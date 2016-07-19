@@ -1,8 +1,15 @@
-language: c
+language: csharp
+solution: travis-mono-test.sln
+
+mono: latest
+dotnet: 1.0.0-preview2-003121
 sudo: true
 dist: trusty
+osx_image: xcode7.3
 
-os: linux
+os:
+  - osx
+  - linux
 
 notifications:
   email:
@@ -10,15 +17,12 @@ notifications:
     on_failure: always
 
 script:
-  - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
-  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 417A0893
-  - sudo apt-get update -qq
-  - export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
-  - sudo apt-get install -qq dotnet-dev-1.0.0-preview2-003121
-  - dotnet --info
+  - mkdir bla && cd bla
   - dotnet new
-  - dotnet restore
+  - time dotnet restore
   - dotnet run
-
+  - cd ..
+  - xbuild /p:Configuration=Release travis-mono-test.sln
+  - mono travis-mono-test/bin/Release/travis-mono-test.exe
 
 
