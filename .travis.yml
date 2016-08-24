@@ -30,6 +30,7 @@ matrix:
     - os: linux
       mono: weekly
       sudo: false
+      env: MONO_DEBUG=no-compact-seq-points MONO_ENV_OPTIONS=-O=-aot
     - os: linux
       mono: 4.4.1
       sudo: false
@@ -63,6 +64,7 @@ matrix:
       mono: beta
     - os: osx
       mono: weekly
+      env: MONO_DEBUG=no-compact-seq-points MONO_ENV_OPTIONS=-O=-aot
     - os: osx
       mono: latest
     - os: osx
