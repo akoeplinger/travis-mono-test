@@ -15,18 +15,15 @@ notifications:
     on_success: change
     on_failure: always
 
-before_install:
-  - env
-  - ls -la $HOME
-  - ls -la $HOME/.config || true
-
 install:
   - env
   - ls -la $HOME
   - ls -la $HOME/.config || true
+  - ls -la $HOME/.config/.mono || true
   - nuget restore
   - ls -la $HOME
   - ls -la $HOME/.config || true
+  - ls -la $HOME/.config/.mono || true
 
 script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new && time dotnet restore && dotnet run; fi
