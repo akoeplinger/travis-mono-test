@@ -3,89 +3,27 @@ solution: travis-mono-test.sln
 
 matrix:
   include:
-    - os: osx
-      osx_image: xcode7.3
-      dotnet: 1.0.0-preview2-003121
-      mono: none
-      env: DOTNETCORE=1
-    - os: linux
-      dist: trusty
-      sudo: required
-      dotnet: 1.0.0-preview2-003121
-      mono: none
-      env: DOTNETCORE=1
     - os: linux
       mono: latest
       sudo: false
-    - os: linux
-      mono: latest
-      dist: trusty
-      sudo: required
     - os: linux
       mono: alpha
       sudo: false
-    - os: linux
-      mono: beta
-      sudo: false
-    - os: linux
-      mono: weekly
-      sudo: false
-    - os: linux
-      mono: 4.4.1
-      sudo: false
-    - os: linux
-      mono: 4.4.0
-      sudo: false
-    - os: linux
-      mono: 4.2.4
-      sudo: false
-    - os: linux
-      mono: 4.0.5
-      sudo: false
-    - os: linux
-      mono: 3.12.0
-      sudo: false
-    - os: linux
-      mono: 3.10.0
-      sudo: false
-    - os: linux
-      mono: 3.8.0
-      sudo: false
-    - os: linux
-      mono: 3.2.8
-      sudo: false
-    - os: linux
-      mono: 2.10.8
-      sudo: false
-    - os: osx
-      mono: alpha
-    - os: osx
-      mono: beta
-    - os: osx
-      mono: weekly
-    - os: osx
-      mono: latest
-    - os: osx
-      mono: 4.4.1
-    - os: osx
-      mono: 4.4.0
-    - os: osx
-      mono: 4.2.4
-    - os: osx
-      mono: 4.0.5
-    - os: osx
-      mono: 3.12.0
-    - os: osx
-      mono: 3.10.0
-    - os: osx
-      mono: 3.8.0
-    - os: osx
-      mono: 3.2.8
 
 notifications:
   email:
     on_success: change
     on_failure: always
+
+before_install:
+  - env
+  - ls -la $HOME
+  - ls -la $HOME/.config || true
+
+install:
+  - env
+  - ls -la $HOME
+  - ls -la $HOME/.config
 
 script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new && time dotnet restore && dotnet run; fi
