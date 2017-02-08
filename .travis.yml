@@ -23,7 +23,10 @@ before_install:
 install:
   - env
   - ls -la $HOME
-  - ls -la $HOME/.config
+  - ls -la $HOME/.config || true
+  - nuget restore
+  - ls -la $HOME
+  - ls -la $HOME/.config || true
 
 script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new && time dotnet restore && dotnet run; fi
