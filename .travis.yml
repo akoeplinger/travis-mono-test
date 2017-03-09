@@ -57,9 +57,6 @@ matrix:
     - os: linux
       mono: 3.2.8
       sudo: false
-    - os: linux
-      mono: 2.10.8
-      sudo: false
     - os: osx
       mono: alpha
     - os: osx
