@@ -20,7 +20,8 @@ matrix:
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      mono: latest
+      mono: alpha
+      dist: trusty
       sudo: false
     - os: linux
       mono: latest
