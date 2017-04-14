@@ -101,3 +101,4 @@ script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new console && time dotnet restore && dotnet run; fi
   - if [ -z "${DOTNETCORE}" ]; then xbuild /p:Configuration=Release /v:diag travis-mono-test.sln; fi
   - if [ -z "${DOTNETCORE}" ]; then mono travis-mono-test/bin/Release/travis-mono-test.exe; fi
+
