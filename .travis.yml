@@ -85,12 +85,6 @@ matrix:
     - os: osx
       osx_image: xcode6.4
       mono: 3.10.0
-    - os: osx
-      osx_image: xcode6.4
-      mono: 3.8.0
-    - os: osx
-      osx_image: xcode6.4
-      mono: 3.2.8
 
 notifications:
   email:
