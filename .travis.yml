@@ -91,6 +91,9 @@ notifications:
     on_success: change
     on_failure: always
 
+before_install:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; fi
+
 script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new console && time dotnet restore && dotnet run; fi
   - if [ -z "${DOTNETCORE}" ]; then xbuild /p:Configuration=Release /v:diag travis-mono-test.sln; fi
