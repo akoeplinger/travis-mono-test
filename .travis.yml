@@ -93,7 +93,8 @@ notifications:
     on_failure: always
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; brew update; fi
+  - cat /home/travis/build.sh
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; fi
 
 script:
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new console && time dotnet restore && dotnet run; fi
