@@ -25,13 +25,12 @@ matrix:
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      mono: alpha
-      dist: trusty
+      mono: latest
+      dist: precise
       sudo: false
     - os: linux
       mono: latest
-      dist: trusty
-      sudo: required
+      sudo: false
     - os: linux
       mono: alpha
       sudo: false
@@ -80,6 +79,8 @@ matrix:
       mono: weekly
     - os: osx
       mono: latest
+    - os: osx
+      mono: 5.2.0
     - os: osx
       mono: 4.4.1
     - os: osx
