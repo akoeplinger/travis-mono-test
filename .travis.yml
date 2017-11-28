@@ -1,117 +1,16 @@
 language: csharp
+os: linux
+dist: trusty
+sudo: false
+dotnet: 2.0.3
+mono: none
 
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode9
-      dotnet: 2.0.3
-      mono: none
-      env: DOTNETCORE=1
-    - os: osx
-      osx_image: xcode9
-      dotnet: 1.1.5
-      mono: none
-      env: DOTNETCORE=1
-    - os: linux
-      dist: trusty
-      sudo: false
-      dotnet: 2.0.3
-      mono: none
-      env: DOTNETCORE=1
-    - os: linux
-      dist: trusty
-      sudo: required
-      dotnet: 2.0.3
-      mono: none
-      env: DOTNETCORE=1
-    - os: linux
-      dist: trusty
-      dotnet: 1.1.5
-      mono: none
-      env: DOTNETCORE=1
-    - os: linux
-      mono: latest
-      dist: precise
-      sudo: false
-    - os: linux
-      mono: latest
-      sudo: false
-    - os: linux
-      mono: alpha
-      sudo: false
-    - os: linux
-      mono: beta
-      sudo: false
-    - os: linux
-      mono: weekly
-      sudo: false
-    - os: linux
-      mono: 5.2.0
-      sudo: false
-    - os: linux
-      mono: 4.6.2
-      sudo: false
-    - os: linux
-      mono: 4.4.1
-      sudo: false
-    - os: linux
-      mono: 4.4.0
-      sudo: false
-    - os: linux
-      mono: 4.2.4
-      sudo: false
-    - os: linux
-      mono: 4.0.5
-      sudo: false
-    - os: linux
-      mono: 3.12.0
-      sudo: false
-    - os: linux
-      mono: 3.10.0
-      sudo: false
-    - os: linux
-      mono: 3.8.0
-      sudo: false
-    - os: linux
-      mono: 3.2.8
-      dist: precise
-      sudo: false
-    - os: osx
-      mono: alpha
-    - os: osx
-      mono: beta
-    - os: osx
-      mono: weekly
-    - os: osx
-      mono: latest
-    - os: osx
-      mono: 5.2.0
-    - os: osx
-      mono: 4.4.1
-    - os: osx
-      mono: 4.4.0
-    - os: osx
-      mono: 4.2.4
-    - os: osx
-      mono: 4.0.5
-    - os: osx
-      osx_image: xcode6.4
-      mono: 3.12.0
-    - os: osx
-      osx_image: xcode6.4
-      mono: 3.10.0
-
-notifications:
-  email:
-    on_success: change
-    on_failure: always
-
-before_install:
-  - cat $HOME/build.sh
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; fi
+addons:
+  apt:
+    packages:
+    - dotnet-dev-1.1.5
+    - dotnet-runtime-2.0.0
 
 script:
-  - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new console && time dotnet restore && dotnet run; fi
-  - if [ -z "${DOTNETCORE}" ]; then xbuild /p:Configuration=Release /v:diag travis-mono-test.sln; fi
-  - if [ -z "${DOTNETCORE}" ]; then mono travis-mono-test/bin/Release/travis-mono-test.exe; fi
+  - dotnet --info
 
