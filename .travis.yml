@@ -8,7 +8,7 @@ mono: none
 addons:
   apt:
     packages:
-    - dotnet-dev-1.1.5
+    - dotnet-sharedframework-microsoft.netcore.app-1.1.5
     - dotnet-runtime-2.0.0
 
 script:
