@@ -15,4 +15,5 @@ script:
   - dotnet --info
   - dotnet new console --name test && cd test
   - sed -i "s/netcoreapp2.0/netcoreapp1.1.5/g" test.csproj
+  - cat test.csproj
   - dotnet run
