@@ -33,11 +33,11 @@ matrix:
       mono: latest
       dist: precise
       sudo: false
-    - os: linux
-      mono: latest
-      dist: xenial
-      sudo: required
-      group: edge
+#    - os: linux
+#      mono: latest
+#      dist: xenial
+#      sudo: required
+#      group: edge
     - os: linux
       mono: latest
       sudo: false
