@@ -111,6 +111,7 @@ notifications:
 
 before_install:
   - cat $HOME/build.sh
+  - echo $STANDARD_CI_SOURCE_REVISION_ID $STANDARD_CI_REPOSITORY_URL $STANDARD_CI_REPOSITORY_TYPE
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; fi
 
 script:
