@@ -115,7 +115,8 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ulimit -n 1024; fi
 
 script:
+  - if [ -z $(which msbuild) ]; then export MSBUILD=xbuild; else export MSBUILD=msbuild; fi
   - if [ -n "${DOTNETCORE}" ]; then mkdir bla && cd bla && dotnet new console && time dotnet restore && dotnet run; fi
-  - if [ -z "${DOTNETCORE}" ]; then xbuild /p:Configuration=Release /v:diag travis-mono-test.sln; fi
+  - if [ -z "${DOTNETCORE}" ]; then $MSBUILD /p:Configuration=Release /v:diag travis-mono-test.sln && csc /langversion:?; fi
   - if [ -z "${DOTNETCORE}" ]; then mono travis-mono-test/bin/Release/travis-mono-test.exe; fi
 
