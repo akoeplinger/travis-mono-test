@@ -15,6 +15,12 @@ matrix:
     - os: linux
       dist: trusty
       sudo: false
+      dotnet: 2.1.300
+      mono: none
+      env: DOTNETCORE=1
+    - os: linux
+      dist: trusty
+      sudo: false
       dotnet: 2.0.3
       mono: none
       env: DOTNETCORE=1
