@@ -13,25 +13,25 @@ matrix:
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      dist: trusty
+      dist: xenial
       sudo: false
       dotnet: 2.1
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      dist: trusty
+      dist: xenial
       sudo: false
       dotnet: 2.0.3
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      dist: trusty
+      dist: xenial
       sudo: required
       dotnet: 2.0.3
       mono: none
       env: DOTNETCORE=1
     - os: linux
-      dist: trusty
+      dist: xenial
       dotnet: 1.1.5
       mono: none
       env: DOTNETCORE=1
@@ -44,15 +44,19 @@ matrix:
       dist: xenial
     - os: linux
       mono: latest
+      dist: xenial
       sudo: false
     - os: linux
       mono: alpha
+      dist: xenial
       sudo: false
     - os: linux
       mono: beta
+      dist: xenial
       sudo: false
     - os: linux
       mono: weekly
+      dist: xenial
       sudo: false
     - os: linux
       mono: 5.2.0
