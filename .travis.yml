@@ -85,10 +85,6 @@ matrix:
     - os: linux
       mono: 3.8.0
       sudo: false
-    - os: linux
-      mono: 3.2.8
-      dist: precise
-      sudo: false
     - os: osx
       mono: alpha
     - os: osx
